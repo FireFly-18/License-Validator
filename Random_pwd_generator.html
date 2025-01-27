@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+                color: lightpink;
+                text-align: center;
+            }
+            div{
+                background-color: lightcyan;
+                height: 120px;
+                border-radius: 25px;
+            }
+            p{
+                color: black;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <h1>Random Password maker.</h1>
+        <p id="result"></p>
+        <button onclick="generateString()">Click Button.</button>
+        </div>
+
+        <script>
+            function generateString(){
+                console.log("button clicked")
+                const length = 6;
+                const charcters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var result = '';
+                for(var i = 0; i < length; i++){
+                    const randomIndex = Math.floor(Math.random()* charcters.length);
+                    result += charcters.charAt(randomIndex);
+
+                }
+                document.getElementById("result").innerText = result;
+            }
+        </script>
+    </body>
+</html>
