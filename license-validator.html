@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url("https://static.vecteezy.com/system/resources/previews/000/412/827/non_2x/city-scene-with-buildings-and-road-vector.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            div{
+                background-color:teal;
+                width: 370px;
+                height:100px;
+                border-radius:30px;
+            }
+            button{
+                width:200px;
+                height:30px;
+                background-color:green;
+                color:white;
+                border:none;
+                border-radius:4px;
+            }
+            input{
+                width:300px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1>Driving Allowance</h1>
+        <br>
+        <div>
+            <label>Enter your age</label>
+            <br>
+            <input type="number" id="input">
+            <br><br>
+            <button onclick="drivingAllowance()">Check Allowance</button>
+            <h2 id="result" style="color:white;"></h2>
+        </div>
+        </center>
+
+        <script>
+            function drivingAllowance(){
+                var age = parseInt(document.getElementById("input").value)
+                if(age < 18){
+                    document.getElementById("result").innerHTML = "Not eligible to drive.";
+                }
+                else if(age >= 18 && age < 85 ){
+                    document.getElementById("result").innerHTML = "Eligible to drive.";
+                }
+                else{
+                    document.getElementById("result").innerHTML = "Re-try";
+                }
+            }
+        </script>
+    </body>
+</html>
